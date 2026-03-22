@@ -45,20 +45,23 @@ void copy_image(float *image_out, const float *image_in, const std::size_t size)
 int main(int argc, char *argv[])
 {
 
+int main(int argc, char *argv[])
+{
     if (argc < 3)
     {
-        std::printf("USAGE: sample input_image output_image\n");
+        std::printf("USAGE: main input_image output_image\n");
         std::exit(EXIT_FAILURE);
     }
 
     char image_in_name[MAX_FILENAME];
     char image_out_name[MAX_FILENAME];
 
+
     std::snprintf(image_in_name, MAX_FILENAME, "%s", argv[1]);
     std::snprintf(image_out_name, MAX_FILENAME, "%s", argv[2]);
 
     // Load image from file and allocate space for the output image
-    int width, height, cpp;
+    int width, height, cpp; // cpp = channels per pixel
     float *image_in = stbi_loadf(image_in_name, &width, &height, &cpp, COLOR_CHANNELS);
 
     if (image_in == NULL)
@@ -67,6 +70,8 @@ int main(int argc, char *argv[])
         std::exit(EXIT_FAILURE);
     }
     std::printf("Loaded image %s of size %dx%d with %d channels.\n", image_in_name, width, height, cpp);
+
+    // Allocate space for the output image.
     const std::size_t pixel_count = static_cast<std::size_t>(width) * static_cast<std::size_t>(height) * static_cast<std::size_t>(cpp);
     float *image_out = static_cast<float *>(std::malloc(pixel_count * sizeof(float)));
     if (image_out == NULL) {
@@ -77,6 +82,7 @@ int main(int argc, char *argv[])
 
     // Copy the input image into output and mesure execution time
     double start = omp_get_wtime();
+    // TODO: replace this with the actual computation
     copy_image(image_out, image_in, pixel_count);
     double stop = omp_get_wtime();
     std::printf("Time to copy: %f s\n", stop - start);
