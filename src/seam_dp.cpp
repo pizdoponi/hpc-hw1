@@ -1,6 +1,9 @@
 #include "seam_dp.h"
 #include <algorithm>
 #include <vector>
+#include <cstddef>
+#include <cstdlib>
+#include <omp.h>
 
 std::vector<float> compute_cumulative_energy_bottom_up(
     const std::vector<float>& energy, int width, int height) {
@@ -67,4 +70,63 @@ std::vector<int> find_vertical_seam_top_down(
     }
 
     return seam;
+}
+
+void remove_seam(float*& image, int& width, int& height, int cpp,
+    const std::vector<int>& seam, SeamDirection direction) {
+    if (image == nullptr || width <= 1 || height <= 1 || cpp <= 0) {
+        return;
+    }
+
+    if (direction == SeamDirection::Vertical) {
+        const int new_width = width - 1;
+        const std::size_t new_count = static_cast<std::size_t>(new_width) * height * cpp;
+        float *new_image = static_cast<float *>(std::malloc(new_count * sizeof(float)));
+        if (new_image == nullptr) {
+            return;
+        }
+
+        #pragma omp parallel for schedule(static)
+        for (int y = 0; y < height; y++) {
+            const int seam_x = seam[static_cast<std::size_t>(y)];
+            for (int x = 0; x < new_width; x++) {
+                const int src_x = (x < seam_x) ? x : x + 1;
+                const std::size_t dst_base = (static_cast<std::size_t>(y) * new_width + x) * cpp;
+                const std::size_t src_base = (static_cast<std::size_t>(y) * width + src_x) * cpp;
+                for (int c = 0; c < cpp; ++c) {
+                    new_image[dst_base + c] = image[src_base + c];
+                }
+            }
+        }
+
+        std::free(image);
+        image = new_image;
+        width = new_width;
+        return;
+    }
+
+    // else direction == SeamDirection::Horizontal
+    const int new_height = height - 1;
+    const std::size_t new_count = static_cast<std::size_t>(width) * new_height * cpp;
+    float *new_image = static_cast<float *>(std::malloc(new_count * sizeof(float)));
+    if (new_image == nullptr) {
+        return;
+    }
+
+    #pragma omp parallel for schedule(static)
+    for (int x = 0; x < width; x++) {
+        const int seam_y = seam[static_cast<std::size_t>(x)];
+        for (int y = 0; y < new_height; y++) {
+            const int src_y = (y < seam_y) ? y : y + 1;
+            const std::size_t dst_base = (static_cast<std::size_t>(y) * width + x) * cpp;
+            const std::size_t src_base = (static_cast<std::size_t>(src_y) * width + x) * cpp;
+            for (int c = 0; c < cpp; ++c) {
+                new_image[dst_base + c] = image[src_base + c];
+            }
+        }
+    }
+
+    std::free(image);
+    image = new_image;
+    height = new_height;
 }
