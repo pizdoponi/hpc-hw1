@@ -127,8 +127,7 @@ int main(int argc, char *argv[])
     const char *file_type = std::strrchr(image_out_name, '.');
     if (file_type == NULL) {
         std::printf("Error: No file extension found!\n");
-        stbi_image_free(image_in);
-        std::free(image_out);
+        std::free(image_in);
         std::exit(EXIT_FAILURE);
     }
     file_type++; // skip the dot
@@ -139,8 +138,7 @@ int main(int argc, char *argv[])
         unsigned char *image_out_u8 = static_cast<unsigned char *>(std::malloc(pixel_count * sizeof(unsigned char)));
         if (image_out_u8 == NULL) {
             std::printf("Error: Failed to allocate memory for 8-bit output image!\n");
-            stbi_image_free(image_in);
-            std::free(image_out);
+            std::free(image_in);
             std::exit(EXIT_FAILURE);
         }
         for (std::size_t i = 0; i < pixel_count; ++i) {
@@ -163,8 +161,7 @@ int main(int argc, char *argv[])
     }
 
     // Release the memory
-    stbi_image_free(image_in);
-    std::free(image_out);
+    std::free(image_in);
 
     return 0;
 }
