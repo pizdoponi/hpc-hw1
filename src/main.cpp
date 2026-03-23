@@ -1,3 +1,4 @@
+#include <vector>
 #define _GNU_SOURCE
 #include <cstdio>
 #include <cstdlib>
@@ -5,7 +6,9 @@
 #include <cstddef>
 #include <omp.h>
 #include <sched.h>
-#include <numa.h>
+#include <numa.h> // NOLINT
+
+#include "seam_dp.h"
 #include "image_energy.h"
 
 #define STB_IMAGE_IMPLEMENTATION
@@ -69,21 +72,27 @@ int main(int argc, char *argv[])
     }
     std::printf("Loaded image %s of size %dx%d with %d channels.\n", image_in_name, width, height, cpp);
 
-    // Allocate space for the output image.
-    const std::size_t pixel_count = static_cast<std::size_t>(width) * static_cast<std::size_t>(height) * static_cast<std::size_t>(cpp);
-    float *image_out = static_cast<float *>(std::malloc(pixel_count * sizeof(float)));
-    if (image_out == NULL) {
-        std::printf("Error: Failed to allocate memory for output image!\n");
-        stbi_image_free(image_in);
-        std::exit(EXIT_FAILURE);
+    double start = omp_get_wtime();
+
+    // ── do the work ─────────────────────────────────────────────────────
+    const int n_seams_to_remove = 1; // 128
+
+    for (int i = 0; i < n_seams_to_remove; i++) {
+        std::vector<float> image_energy = compute_energy(image_in, height, width, cpp);
+        std::vector<float> cumulative_energy = compute_cumulative_energy_bottom_up(image_energy, width, height);
+        std::vector<int> seam_to_remove = find_vertical_seam_top_down(cumulative_energy, width, height);
+        remove_seam(image_in, width, height, cpp, seam_to_remove, SeamDirection::Vertical);
     }
 
-    // Copy the input image into output and mesure execution time
-    double start = omp_get_wtime();
-    // TODO: replace this with the actual computation
-    copy_image(image_out, image_in, pixel_count);
+    // Because we modify the image in place, the output is the last step.
+    float *image_out = image_in;
+    // ──────────────────────────────────────────────────────────────────────
+
     double stop = omp_get_wtime();
-    std::printf("Time to copy: %f s\n", stop - start);
+
+    std::printf("Time to remove %d seams: %f s\n", n_seams_to_remove, stop - start);
+
+    const std::size_t pixel_count = static_cast<std::size_t>(width) * static_cast<std::size_t>(height) * static_cast<std::size_t>(cpp);
     
     // Write the output image to file
     char image_out_name_temp[MAX_FILENAME];
