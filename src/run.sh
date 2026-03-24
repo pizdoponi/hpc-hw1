@@ -22,4 +22,4 @@ module load numactl
 g++ -O3 -fopenmp main.cpp seam_dp.cpp image_energy.cpp -lm -lnuma -o main
 
 # Run
-srun main test_images/1024x768.png valve-out.png
+srun main test_images/1024x768.png output_images/1024x768.png 128 2
