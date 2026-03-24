@@ -102,7 +102,7 @@ std::vector<int> find_vertical_seam_top_down(
 }
 
 void remove_seam(float*& image, int& width, int& height, int cpp,
-    const std::vector<int>& seam, SeamDirection direction) {
+    const std::vector<int>& seam, SeamDirection direction, bool parallel) {
     if (image == nullptr || width <= 1 || height <= 1 || cpp <= 0) {
         return;
     }
@@ -115,7 +115,7 @@ void remove_seam(float*& image, int& width, int& height, int cpp,
             return;
         }
 
-        #pragma omp parallel for schedule(static)
+        #pragma omp parallel for schedule(static) if (parallel)
         for (int y = 0; y < height; y++) {
             const int seam_x = seam[static_cast<std::size_t>(y)];
             for (int x = 0; x < new_width; x++) {
@@ -142,7 +142,7 @@ void remove_seam(float*& image, int& width, int& height, int cpp,
         return;
     }
 
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(static) if (parallel)
     for (int x = 0; x < width; x++) {
         const int seam_y = seam[static_cast<std::size_t>(x)];
         for (int y = 0; y < new_height; y++) {

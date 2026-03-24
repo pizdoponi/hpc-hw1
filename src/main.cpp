@@ -85,7 +85,7 @@ int main(int argc, char *argv[])
         }
 
         std::vector<int> seam_to_remove = find_vertical_seam_top_down(cumulative_energy, width, height);
-        remove_seam(image_in, width, height, cpp, seam_to_remove, SeamDirection::Vertical);
+        remove_seam(image_in, width, height, cpp, seam_to_remove, SeamDirection::Vertical, parallel > 0);
     }
 
     // Because we modify the image in place, the output is the last step.

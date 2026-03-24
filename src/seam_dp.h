@@ -29,7 +29,8 @@ std::vector<int> find_vertical_seam_top_down(
 // for SeamDirection::Vertical, size=height (column per row);
 // for Horizontal, size=width (row per column).
 // Updates image pointer and dimensions; frees old buffer.
+// If parallel is true, the copy loop is parallelized.
 void remove_seam(float*& image, int& width, int& height, int cpp,
-    const std::vector<int>& seam, SeamDirection direction);
+    const std::vector<int>& seam, SeamDirection direction, bool parallel);
 
 #endif  // SEAM_DP_H
