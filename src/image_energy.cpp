@@ -55,6 +55,21 @@ std::vector<float> compute_energy(const float* image, int height, int width, int
 {
     std::vector<float> energies(static_cast<std::size_t>(height) * width, 0.0f);
 
+    for (int y = 0; y < height; ++y) {
+        for (int x = 0; x < width; ++x) {
+            const std::size_t idx = static_cast<std::size_t>(y) * width + x;
+            energies[idx] = compute_energy_pp(image, height, width, cpp, x, y);
+        }
+    }
+
+    return energies;
+}
+
+
+std::vector<float> compute_energy_parallel(const float* image, int height, int width, int cpp)
+{
+    std::vector<float> energies(static_cast<std::size_t>(height) * width, 0.0f);
+
     #pragma omp parallel for collapse(2) schedule(static)
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {

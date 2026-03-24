@@ -9,4 +9,7 @@ float compute_energy_pp(const float* image, int height, int width, int cpp, int 
 // Computes energy for the entire image; result is indexed as [y * width + x].
 std::vector<float> compute_energy(const float* image, int height, int width, int cpp);
 
+// Computes energy for the entire image in parallel; result is indexed as [y * width + x].
+std::vector<float> compute_energy_parallel(const float* image, int height, int width, int cpp);
+
 #endif  // IMAGE_ENERGY_H
