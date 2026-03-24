@@ -10,14 +10,9 @@ enum class SeamDirection {
 
 // Compute cumulative energy from bottom to top using dynamic programming.
 // Returns a vector of cumulative energies; use as M[i * width + j].
+// If parallel is true, each row is parallelized with OpenMP.
 std::vector<float> compute_cumulative_energy_bottom_up(
-    const std::vector<float>& energy, int width, int height);
-
-// Compute cumulative energy from bottom to top using dynamic programming.
-// Parallelizes the computation within each row.
-// Returns a vector of cumulative energies; use as M[i * width + j].
-std::vector<float> compute_cumulative_energy_bottom_up_parallel(
-    const std::vector<float>& energy, int width, int height);
+    const std::vector<float>& energy, int width, int height, bool parallel);
 
 // Find the vertical seam (path from top to bottom) with minimum cumulative energy.
 // Returns a vector of column indices, indexed by row.

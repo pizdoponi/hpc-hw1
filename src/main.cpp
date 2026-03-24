@@ -68,20 +68,15 @@ int main(int argc, char *argv[])
 
     // ── do the work ─────────────────────────────────────────────────────
     for (int i = 0; i < n_seams_to_remove; i++) {
-        std::vector<float> image_energy;
-        if (parallel > 0) {
-            image_energy = compute_energy_parallel(image_in, height, width, cpp);
-        } else {
-            image_energy = compute_energy(image_in, height, width, cpp);
-        }
+        std::vector<float> image_energy =
+            compute_energy(image_in, height, width, cpp, parallel > 0);
 
         std::vector<float> cumulative_energy;
         if (parallel == 3) {
             exit(1); // Not yet implemented.
-        } else if (parallel == 2) {
-            cumulative_energy = compute_cumulative_energy_bottom_up_parallel(image_energy, width, height);
         } else {
-            cumulative_energy = compute_cumulative_energy_bottom_up(image_energy, width, height);
+            cumulative_energy = compute_cumulative_energy_bottom_up(
+                image_energy, width, height, parallel == 2);
         }
 
         std::vector<int> seam_to_remove = find_vertical_seam_top_down(cumulative_energy, width, height);

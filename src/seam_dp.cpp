@@ -6,42 +6,17 @@
 #include <omp.h>
 
 std::vector<float> compute_cumulative_energy_bottom_up(
-    const std::vector<float>& energy, int width, int height) {
-    std::vector<float> cumulative(static_cast<size_t>(width) * height, 0.0f);
-
-    for (int j = 0; j < width; ++j) {
-        cumulative[static_cast<size_t>(height - 1) * width + j] =
-            energy[static_cast<size_t>(height - 1) * width + j];
-    }
-
-    for (int i = height - 2; i >= 0; --i) {
-        for (int j = 0; j < width; ++j) {
-            float best = cumulative[static_cast<size_t>(i + 1) * width + j];
-            if (j > 0) {
-                best = std::min(best, cumulative[static_cast<size_t>(i + 1) * width + (j - 1)]);
-            }
-            if (j + 1 < width) {
-                best = std::min(best, cumulative[static_cast<size_t>(i + 1) * width + (j + 1)]);
-            }
-            cumulative[static_cast<size_t>(i) * width + j] = energy[static_cast<size_t>(i) * width + j] + best;
-        }
-    }
-
-    return cumulative;
-}
-
-std::vector<float> compute_cumulative_energy_bottom_up_parallel(
-    const std::vector<float>& energy, int width, int height) {
+    const std::vector<float>& energy, int width, int height, bool parallel) {
     std::vector<float> cumulative(static_cast<size_t>(width) * height, 0.0f);
 
     // Copy the energy into the cumulative buffer.
-    #pragma omp parallel for schedule(static)
+    #pragma omp parallel for schedule(static) if (parallel)
     for (int j = 0; j < width; ++j) {
         cumulative[static_cast<size_t>(height - 1) * width + j] =
             energy[static_cast<size_t>(height - 1) * width + j];
     }
 
-    #pragma omp parallel
+    #pragma omp parallel if (parallel)
     for (int i = height - 2; i >= 0; --i) {
         #pragma omp for schedule(static)
         for (int j = 0; j < width; ++j) {
