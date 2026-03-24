@@ -1,6 +1,6 @@
 # Homework 1: Parallel Seam Carving using OpenMP
 
-*Note: This is a copy of the [src/report.md](report).*
+*Note: This is a copy of the [report](src/report.md).*
 
 **Authors:** Nejc Krajšek, Rok Mušič  
 **Date:** March 2026  
@@ -34,7 +34,7 @@ where:
 
 ## 3. Measured Results
 
-Results were collected in [src/benchmark_results.csv](benchmark_results.csv).
+Results were collected in [benchmark_results.csv](src/benchmark_results.csv).
 
 ### 3.1 Best observed runtime per image and mode
 
