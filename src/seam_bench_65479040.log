@@ -1,0 +1,466 @@
+Compiling with -O3 and OpenMP
+main.cpp:2:9: warning: "_GNU_SOURCE" redefined
+    2 | #define _GNU_SOURCE
+      |         ^~~~~~~~~~~
+<command-line>: note: this is the location of the previous definition
+SLURM_CPUS_PER_TASK=32
+OMP_PLACES=cores
+OMP_PROC_BIND=close
+Repeats=5, seams per run=128
+
+=== 720x480 ===
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=720x480 mode=0 threads=1 run=1/5 runtime=0.899823s
+size=720x480 mode=0 threads=1 run=2/5 runtime=0.899298s
+size=720x480 mode=0 threads=1 run=3/5 runtime=0.899187s
+size=720x480 mode=0 threads=1 run=4/5 runtime=0.899028s
+size=720x480 mode=0 threads=1 run=5/5 runtime=0.900036s
+avg(size=720x480, mode=0, threads=1)=0.899474400s, speedup_vs_mode0_t1=1.000000, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=720x480 mode=1 threads=1 run=1/5 runtime=0.915138s
+size=720x480 mode=1 threads=1 run=2/5 runtime=0.917904s
+size=720x480 mode=1 threads=1 run=3/5 runtime=0.918546s
+size=720x480 mode=1 threads=1 run=4/5 runtime=0.916502s
+size=720x480 mode=1 threads=1 run=5/5 runtime=0.918697s
+avg(size=720x480, mode=1, threads=1)=0.917357400s, speedup_vs_mode0_t1=0.980506, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=720x480 mode=1 threads=2 run=1/5 runtime=0.481792s
+size=720x480 mode=1 threads=2 run=2/5 runtime=0.481588s
+size=720x480 mode=1 threads=2 run=3/5 runtime=0.480899s
+size=720x480 mode=1 threads=2 run=4/5 runtime=0.482331s
+size=720x480 mode=1 threads=2 run=5/5 runtime=0.483630s
+avg(size=720x480, mode=1, threads=2)=0.482048000s, speedup_vs_mode0_t1=1.865944, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=720x480 mode=1 threads=4 run=1/5 runtime=0.262918s
+size=720x480 mode=1 threads=4 run=2/5 runtime=0.263327s
+size=720x480 mode=1 threads=4 run=3/5 runtime=0.263374s
+size=720x480 mode=1 threads=4 run=4/5 runtime=0.265814s
+size=720x480 mode=1 threads=4 run=5/5 runtime=0.263217s
+avg(size=720x480, mode=1, threads=4)=0.263730000s, speedup_vs_mode0_t1=3.410588, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=720x480 mode=1 threads=8 run=1/5 runtime=0.160626s
+size=720x480 mode=1 threads=8 run=2/5 runtime=0.159608s
+size=720x480 mode=1 threads=8 run=3/5 runtime=0.159845s
+size=720x480 mode=1 threads=8 run=4/5 runtime=0.159569s
+size=720x480 mode=1 threads=8 run=5/5 runtime=0.161666s
+avg(size=720x480, mode=1, threads=8)=0.160262800s, speedup_vs_mode0_t1=5.612496, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=720x480 mode=1 threads=16 run=1/5 runtime=0.109015s
+size=720x480 mode=1 threads=16 run=2/5 runtime=0.109628s
+size=720x480 mode=1 threads=16 run=3/5 runtime=0.109712s
+size=720x480 mode=1 threads=16 run=4/5 runtime=0.110030s
+size=720x480 mode=1 threads=16 run=5/5 runtime=0.110474s
+avg(size=720x480, mode=1, threads=16)=0.109771800s, speedup_vs_mode0_t1=8.194039, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=720x480 mode=1 threads=32 run=1/5 runtime=0.088068s
+size=720x480 mode=1 threads=32 run=2/5 runtime=0.086706s
+size=720x480 mode=1 threads=32 run=3/5 runtime=0.086141s
+size=720x480 mode=1 threads=32 run=4/5 runtime=0.088404s
+size=720x480 mode=1 threads=32 run=5/5 runtime=0.087310s
+avg(size=720x480, mode=1, threads=32)=0.087325800s, speedup_vs_mode0_t1=10.300214, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=720x480 mode=2 threads=1 run=1/5 runtime=0.943070s
+size=720x480 mode=2 threads=1 run=2/5 runtime=0.951505s
+size=720x480 mode=2 threads=1 run=3/5 runtime=0.942370s
+size=720x480 mode=2 threads=1 run=4/5 runtime=0.959203s
+size=720x480 mode=2 threads=1 run=5/5 runtime=0.942370s
+avg(size=720x480, mode=2, threads=1)=0.947703600s, speedup_vs_mode0_t1=0.949109, speedup_mode2_vs_mode1=0.967979
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=720x480 mode=2 threads=2 run=1/5 runtime=0.500840s
+size=720x480 mode=2 threads=2 run=2/5 runtime=0.495935s
+size=720x480 mode=2 threads=2 run=3/5 runtime=0.504606s
+size=720x480 mode=2 threads=2 run=4/5 runtime=0.503588s
+size=720x480 mode=2 threads=2 run=5/5 runtime=0.494200s
+avg(size=720x480, mode=2, threads=2)=0.499833800s, speedup_vs_mode0_t1=1.799547, speedup_mode2_vs_mode1=0.964417
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=720x480 mode=2 threads=4 run=1/5 runtime=0.268719s
+size=720x480 mode=2 threads=4 run=2/5 runtime=0.271897s
+size=720x480 mode=2 threads=4 run=3/5 runtime=0.269902s
+size=720x480 mode=2 threads=4 run=4/5 runtime=0.268118s
+size=720x480 mode=2 threads=4 run=5/5 runtime=0.269298s
+avg(size=720x480, mode=2, threads=4)=0.269586800s, speedup_vs_mode0_t1=3.336493, speedup_mode2_vs_mode1=0.978275
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=720x480 mode=2 threads=8 run=1/5 runtime=0.212197s
+size=720x480 mode=2 threads=8 run=2/5 runtime=0.212581s
+size=720x480 mode=2 threads=8 run=3/5 runtime=0.212100s
+size=720x480 mode=2 threads=8 run=4/5 runtime=0.212502s
+size=720x480 mode=2 threads=8 run=5/5 runtime=0.213310s
+avg(size=720x480, mode=2, threads=8)=0.212538000s, speedup_vs_mode0_t1=4.232064, speedup_mode2_vs_mode1=0.754043
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=720x480 mode=2 threads=16 run=1/5 runtime=0.176527s
+size=720x480 mode=2 threads=16 run=2/5 runtime=0.174958s
+size=720x480 mode=2 threads=16 run=3/5 runtime=0.174808s
+size=720x480 mode=2 threads=16 run=4/5 runtime=0.177200s
+size=720x480 mode=2 threads=16 run=5/5 runtime=0.176966s
+avg(size=720x480, mode=2, threads=16)=0.176091800s, speedup_vs_mode0_t1=5.107986, speedup_mode2_vs_mode1=0.623378
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=720x480 mode=2 threads=32 run=1/5 runtime=0.189912s
+size=720x480 mode=2 threads=32 run=2/5 runtime=0.190954s
+size=720x480 mode=2 threads=32 run=3/5 runtime=0.192524s
+size=720x480 mode=2 threads=32 run=4/5 runtime=0.190526s
+size=720x480 mode=2 threads=32 run=5/5 runtime=0.189548s
+avg(size=720x480, mode=2, threads=32)=0.190692800s, speedup_vs_mode0_t1=4.716877, speedup_mode2_vs_mode1=0.457940
+
+=== 1024x768 ===
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1024x768 mode=0 threads=1 run=1/5 runtime=2.175383s
+size=1024x768 mode=0 threads=1 run=2/5 runtime=2.173725s
+size=1024x768 mode=0 threads=1 run=3/5 runtime=2.174588s
+size=1024x768 mode=0 threads=1 run=4/5 runtime=2.170549s
+size=1024x768 mode=0 threads=1 run=5/5 runtime=2.173455s
+avg(size=1024x768, mode=0, threads=1)=2.173540000s, speedup_vs_mode0_t1=1.000000, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1024x768 mode=1 threads=1 run=1/5 runtime=2.220249s
+size=1024x768 mode=1 threads=1 run=2/5 runtime=2.222197s
+size=1024x768 mode=1 threads=1 run=3/5 runtime=2.219382s
+size=1024x768 mode=1 threads=1 run=4/5 runtime=2.219630s
+size=1024x768 mode=1 threads=1 run=5/5 runtime=2.216528s
+avg(size=1024x768, mode=1, threads=1)=2.219597200s, speedup_vs_mode0_t1=0.979250, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1024x768 mode=1 threads=2 run=1/5 runtime=1.202748s
+size=1024x768 mode=1 threads=2 run=2/5 runtime=1.203272s
+size=1024x768 mode=1 threads=2 run=3/5 runtime=1.202980s
+size=1024x768 mode=1 threads=2 run=4/5 runtime=1.201109s
+size=1024x768 mode=1 threads=2 run=5/5 runtime=1.201088s
+avg(size=1024x768, mode=1, threads=2)=1.202239400s, speedup_vs_mode0_t1=1.807909, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1024x768 mode=1 threads=4 run=1/5 runtime=0.701422s
+size=1024x768 mode=1 threads=4 run=2/5 runtime=0.699657s
+size=1024x768 mode=1 threads=4 run=3/5 runtime=0.702886s
+size=1024x768 mode=1 threads=4 run=4/5 runtime=0.698207s
+size=1024x768 mode=1 threads=4 run=5/5 runtime=0.701169s
+avg(size=1024x768, mode=1, threads=4)=0.700668200s, speedup_vs_mode0_t1=3.102096, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1024x768 mode=1 threads=8 run=1/5 runtime=0.370987s
+size=1024x768 mode=1 threads=8 run=2/5 runtime=0.374275s
+size=1024x768 mode=1 threads=8 run=3/5 runtime=0.371243s
+size=1024x768 mode=1 threads=8 run=4/5 runtime=0.372874s
+size=1024x768 mode=1 threads=8 run=5/5 runtime=0.372917s
+avg(size=1024x768, mode=1, threads=8)=0.372459200s, speedup_vs_mode0_t1=5.835646, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1024x768 mode=1 threads=16 run=1/5 runtime=0.243281s
+size=1024x768 mode=1 threads=16 run=2/5 runtime=0.241781s
+size=1024x768 mode=1 threads=16 run=3/5 runtime=0.244275s
+size=1024x768 mode=1 threads=16 run=4/5 runtime=0.243215s
+size=1024x768 mode=1 threads=16 run=5/5 runtime=0.243323s
+avg(size=1024x768, mode=1, threads=16)=0.243175000s, speedup_vs_mode0_t1=8.938172, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1024x768 mode=1 threads=32 run=1/5 runtime=0.186218s
+size=1024x768 mode=1 threads=32 run=2/5 runtime=0.186298s
+size=1024x768 mode=1 threads=32 run=3/5 runtime=0.185861s
+size=1024x768 mode=1 threads=32 run=4/5 runtime=0.185519s
+size=1024x768 mode=1 threads=32 run=5/5 runtime=0.185093s
+avg(size=1024x768, mode=1, threads=32)=0.185797800s, speedup_vs_mode0_t1=11.698416, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1024x768 mode=2 threads=1 run=1/5 runtime=2.261955s
+size=1024x768 mode=2 threads=1 run=2/5 runtime=2.259310s
+size=1024x768 mode=2 threads=1 run=3/5 runtime=2.288094s
+size=1024x768 mode=2 threads=1 run=4/5 runtime=2.291980s
+size=1024x768 mode=2 threads=1 run=5/5 runtime=2.259254s
+avg(size=1024x768, mode=2, threads=1)=2.272118600s, speedup_vs_mode0_t1=0.956614, speedup_mode2_vs_mode1=0.976884
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1024x768 mode=2 threads=2 run=1/5 runtime=1.207254s
+srun: Step created for StepId=65479040.106
+size=1024x768 mode=2 threads=2 run=2/5 runtime=1.212010s
+size=1024x768 mode=2 threads=2 run=3/5 runtime=1.214502s
+size=1024x768 mode=2 threads=2 run=4/5 runtime=1.242882s
+size=1024x768 mode=2 threads=2 run=5/5 runtime=1.212582s
+avg(size=1024x768, mode=2, threads=2)=1.217846000s, speedup_vs_mode0_t1=1.784741, speedup_mode2_vs_mode1=0.987185
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1024x768 mode=2 threads=4 run=1/5 runtime=0.690329s
+size=1024x768 mode=2 threads=4 run=2/5 runtime=0.689307s
+size=1024x768 mode=2 threads=4 run=3/5 runtime=0.693204s
+size=1024x768 mode=2 threads=4 run=4/5 runtime=0.688197s
+size=1024x768 mode=2 threads=4 run=5/5 runtime=0.690732s
+avg(size=1024x768, mode=2, threads=4)=0.690353800s, speedup_vs_mode0_t1=3.148444, speedup_mode2_vs_mode1=1.014941
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1024x768 mode=2 threads=8 run=1/5 runtime=0.462906s
+size=1024x768 mode=2 threads=8 run=2/5 runtime=0.464750s
+size=1024x768 mode=2 threads=8 run=3/5 runtime=0.465048s
+size=1024x768 mode=2 threads=8 run=4/5 runtime=0.463731s
+size=1024x768 mode=2 threads=8 run=5/5 runtime=0.466376s
+avg(size=1024x768, mode=2, threads=8)=0.464562200s, speedup_vs_mode0_t1=4.678685, speedup_mode2_vs_mode1=0.801742
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1024x768 mode=2 threads=16 run=1/5 runtime=0.361509s
+size=1024x768 mode=2 threads=16 run=2/5 runtime=0.362126s
+size=1024x768 mode=2 threads=16 run=3/5 runtime=0.361007s
+size=1024x768 mode=2 threads=16 run=4/5 runtime=0.361589s
+size=1024x768 mode=2 threads=16 run=5/5 runtime=0.361659s
+avg(size=1024x768, mode=2, threads=16)=0.361578000s, speedup_vs_mode0_t1=6.011262, speedup_mode2_vs_mode1=0.672538
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1024x768 mode=2 threads=32 run=1/5 runtime=0.367647s
+size=1024x768 mode=2 threads=32 run=2/5 runtime=0.368893s
+size=1024x768 mode=2 threads=32 run=3/5 runtime=0.369293s
+size=1024x768 mode=2 threads=32 run=4/5 runtime=0.370502s
+size=1024x768 mode=2 threads=32 run=5/5 runtime=0.367543s
+avg(size=1024x768, mode=2, threads=32)=0.368775600s, speedup_vs_mode0_t1=5.893937, speedup_mode2_vs_mode1=0.503823
+
+=== 1920x1200 ===
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1920x1200 mode=0 threads=1 run=1/5 runtime=6.628454s
+size=1920x1200 mode=0 threads=1 run=2/5 runtime=6.620629s
+size=1920x1200 mode=0 threads=1 run=3/5 runtime=6.630244s
+size=1920x1200 mode=0 threads=1 run=4/5 runtime=6.620553s
+size=1920x1200 mode=0 threads=1 run=5/5 runtime=6.620370s
+avg(size=1920x1200, mode=0, threads=1)=6.624050000s, speedup_vs_mode0_t1=1.000000, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1920x1200 mode=1 threads=1 run=1/5 runtime=6.756650s
+size=1920x1200 mode=1 threads=1 run=2/5 runtime=6.717462s
+size=1920x1200 mode=1 threads=1 run=3/5 runtime=6.645358s
+size=1920x1200 mode=1 threads=1 run=4/5 runtime=6.650817s
+size=1920x1200 mode=1 threads=1 run=5/5 runtime=6.650639s
+avg(size=1920x1200, mode=1, threads=1)=6.684185200s, speedup_vs_mode0_t1=0.991003, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1920x1200 mode=1 threads=2 run=1/5 runtime=3.613637s
+size=1920x1200 mode=1 threads=2 run=2/5 runtime=3.613333s
+size=1920x1200 mode=1 threads=2 run=3/5 runtime=3.612330s
+size=1920x1200 mode=1 threads=2 run=4/5 runtime=3.610903s
+size=1920x1200 mode=1 threads=2 run=5/5 runtime=3.612631s
+avg(size=1920x1200, mode=1, threads=2)=3.612566800s, speedup_vs_mode0_t1=1.833613, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1920x1200 mode=1 threads=4 run=1/5 runtime=2.148562s
+size=1920x1200 mode=1 threads=4 run=2/5 runtime=2.143397s
+size=1920x1200 mode=1 threads=4 run=3/5 runtime=2.146168s
+size=1920x1200 mode=1 threads=4 run=4/5 runtime=2.143697s
+size=1920x1200 mode=1 threads=4 run=5/5 runtime=2.142564s
+avg(size=1920x1200, mode=1, threads=4)=2.144877600s, speedup_vs_mode0_t1=3.088311, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1920x1200 mode=1 threads=8 run=1/5 runtime=1.387324s
+size=1920x1200 mode=1 threads=8 run=2/5 runtime=1.386551s
+size=1920x1200 mode=1 threads=8 run=3/5 runtime=1.391320s
+size=1920x1200 mode=1 threads=8 run=4/5 runtime=1.393534s
+size=1920x1200 mode=1 threads=8 run=5/5 runtime=1.392915s
+avg(size=1920x1200, mode=1, threads=8)=1.390328800s, speedup_vs_mode0_t1=4.764377, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1920x1200 mode=1 threads=16 run=1/5 runtime=0.838522s
+size=1920x1200 mode=1 threads=16 run=2/5 runtime=0.839669s
+size=1920x1200 mode=1 threads=16 run=3/5 runtime=0.839180s
+size=1920x1200 mode=1 threads=16 run=4/5 runtime=0.839433s
+size=1920x1200 mode=1 threads=16 run=5/5 runtime=0.838705s
+avg(size=1920x1200, mode=1, threads=16)=0.839101800s, speedup_vs_mode0_t1=7.894215, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1920x1200 mode=1 threads=32 run=1/5 runtime=0.639163s
+size=1920x1200 mode=1 threads=32 run=2/5 runtime=0.639434s
+size=1920x1200 mode=1 threads=32 run=3/5 runtime=0.638106s
+size=1920x1200 mode=1 threads=32 run=4/5 runtime=0.636040s
+size=1920x1200 mode=1 threads=32 run=5/5 runtime=0.640162s
+avg(size=1920x1200, mode=1, threads=32)=0.638581000s, speedup_vs_mode0_t1=10.373077, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1920x1200 mode=2 threads=1 run=1/5 runtime=6.733828s
+size=1920x1200 mode=2 threads=1 run=2/5 runtime=6.843396s
+size=1920x1200 mode=2 threads=1 run=3/5 runtime=6.757167s
+size=1920x1200 mode=2 threads=1 run=4/5 runtime=6.727766s
+size=1920x1200 mode=2 threads=1 run=5/5 runtime=6.734820s
+avg(size=1920x1200, mode=2, threads=1)=6.759395400s, speedup_vs_mode0_t1=0.979977, speedup_mode2_vs_mode1=0.988873
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1920x1200 mode=2 threads=2 run=1/5 runtime=3.570766s
+size=1920x1200 mode=2 threads=2 run=2/5 runtime=3.564134s
+size=1920x1200 mode=2 threads=2 run=3/5 runtime=3.588582s
+size=1920x1200 mode=2 threads=2 run=4/5 runtime=3.634664s
+size=1920x1200 mode=2 threads=2 run=5/5 runtime=3.620676s
+avg(size=1920x1200, mode=2, threads=2)=3.595764400s, speedup_vs_mode0_t1=1.842181, speedup_mode2_vs_mode1=1.004673
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1920x1200 mode=2 threads=4 run=1/5 runtime=2.141810s
+size=1920x1200 mode=2 threads=4 run=2/5 runtime=2.147094s
+size=1920x1200 mode=2 threads=4 run=3/5 runtime=2.140655s
+size=1920x1200 mode=2 threads=4 run=4/5 runtime=2.122041s
+size=1920x1200 mode=2 threads=4 run=5/5 runtime=2.164717s
+avg(size=1920x1200, mode=2, threads=4)=2.143263400s, speedup_vs_mode0_t1=3.090637, speedup_mode2_vs_mode1=1.000753
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1920x1200 mode=2 threads=8 run=1/5 runtime=1.495878s
+size=1920x1200 mode=2 threads=8 run=2/5 runtime=1.494744s
+size=1920x1200 mode=2 threads=8 run=3/5 runtime=1.496760s
+size=1920x1200 mode=2 threads=8 run=4/5 runtime=1.492866s
+size=1920x1200 mode=2 threads=8 run=5/5 runtime=1.497851s
+avg(size=1920x1200, mode=2, threads=8)=1.495619800s, speedup_vs_mode0_t1=4.428967, speedup_mode2_vs_mode1=0.929600
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1920x1200 mode=2 threads=16 run=1/5 runtime=0.987680s
+size=1920x1200 mode=2 threads=16 run=2/5 runtime=0.990605s
+size=1920x1200 mode=2 threads=16 run=3/5 runtime=0.990991s
+size=1920x1200 mode=2 threads=16 run=4/5 runtime=0.984888s
+size=1920x1200 mode=2 threads=16 run=5/5 runtime=0.991123s
+avg(size=1920x1200, mode=2, threads=16)=0.989057400s, speedup_vs_mode0_t1=6.697336, speedup_mode2_vs_mode1=0.848385
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=1920x1200 mode=2 threads=32 run=1/5 runtime=0.893399s
+size=1920x1200 mode=2 threads=32 run=2/5 runtime=0.889337s
+size=1920x1200 mode=2 threads=32 run=3/5 runtime=0.889929s
+size=1920x1200 mode=2 threads=32 run=4/5 runtime=0.891156s
+size=1920x1200 mode=2 threads=32 run=5/5 runtime=0.887441s
+avg(size=1920x1200, mode=2, threads=32)=0.890252400s, speedup_vs_mode0_t1=7.440643, speedup_mode2_vs_mode1=0.717303
+
+=== 3840x2160 ===
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=3840x2160 mode=0 threads=1 run=1/5 runtime=25.268335s
+size=3840x2160 mode=0 threads=1 run=2/5 runtime=25.167912s
+size=3840x2160 mode=0 threads=1 run=3/5 runtime=24.729529s
+size=3840x2160 mode=0 threads=1 run=4/5 runtime=25.044990s
+size=3840x2160 mode=0 threads=1 run=5/5 runtime=25.231303s
+avg(size=3840x2160, mode=0, threads=1)=25.088413800s, speedup_vs_mode0_t1=1.000000, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=3840x2160 mode=1 threads=1 run=1/5 runtime=25.735505s
+size=3840x2160 mode=1 threads=1 run=2/5 runtime=25.671806s
+size=3840x2160 mode=1 threads=1 run=3/5 runtime=25.235669s
+size=3840x2160 mode=1 threads=1 run=4/5 runtime=25.243618s
+size=3840x2160 mode=1 threads=1 run=5/5 runtime=25.265767s
+avg(size=3840x2160, mode=1, threads=1)=25.430473000s, speedup_vs_mode0_t1=0.986549, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=3840x2160 mode=1 threads=2 run=1/5 runtime=13.645144s
+size=3840x2160 mode=1 threads=2 run=2/5 runtime=13.674415s
+size=3840x2160 mode=1 threads=2 run=3/5 runtime=13.680348s
+size=3840x2160 mode=1 threads=2 run=4/5 runtime=13.955821s
+size=3840x2160 mode=1 threads=2 run=5/5 runtime=13.980698s
+avg(size=3840x2160, mode=1, threads=2)=13.787285200s, speedup_vs_mode0_t1=1.819678, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=3840x2160 mode=1 threads=4 run=1/5 runtime=8.532498s
+size=3840x2160 mode=1 threads=4 run=2/5 runtime=8.497986s
+size=3840x2160 mode=1 threads=4 run=3/5 runtime=8.489799s
+size=3840x2160 mode=1 threads=4 run=4/5 runtime=8.529101s
+size=3840x2160 mode=1 threads=4 run=5/5 runtime=8.509676s
+avg(size=3840x2160, mode=1, threads=4)=8.511812000s, speedup_vs_mode0_t1=2.947482, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=3840x2160 mode=1 threads=8 run=1/5 runtime=5.863721s
+size=3840x2160 mode=1 threads=8 run=2/5 runtime=5.889008s
+size=3840x2160 mode=1 threads=8 run=3/5 runtime=5.873607s
+size=3840x2160 mode=1 threads=8 run=4/5 runtime=5.854697s
+size=3840x2160 mode=1 threads=8 run=5/5 runtime=5.836805s
+avg(size=3840x2160, mode=1, threads=8)=5.863567600s, speedup_vs_mode0_t1=4.278694, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=3840x2160 mode=1 threads=16 run=1/5 runtime=3.677133s
+size=3840x2160 mode=1 threads=16 run=2/5 runtime=3.720258s
+size=3840x2160 mode=1 threads=16 run=3/5 runtime=3.728184s
+size=3840x2160 mode=1 threads=16 run=4/5 runtime=3.790087s
+size=3840x2160 mode=1 threads=16 run=5/5 runtime=3.680823s
+avg(size=3840x2160, mode=1, threads=16)=3.719297000s, speedup_vs_mode0_t1=6.745472, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=3840x2160 mode=1 threads=32 run=1/5 runtime=2.914645s
+size=3840x2160 mode=1 threads=32 run=2/5 runtime=2.960769s
+size=3840x2160 mode=1 threads=32 run=3/5 runtime=2.944500s
+size=3840x2160 mode=1 threads=32 run=4/5 runtime=2.970218s
+size=3840x2160 mode=1 threads=32 run=5/5 runtime=2.961771s
+avg(size=3840x2160, mode=1, threads=32)=2.950380600s, speedup_vs_mode0_t1=8.503450, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=3840x2160 mode=2 threads=1 run=1/5 runtime=25.989608s
+size=3840x2160 mode=2 threads=1 run=2/5 runtime=25.944165s
+size=3840x2160 mode=2 threads=1 run=3/5 runtime=25.908913s
+size=3840x2160 mode=2 threads=1 run=4/5 runtime=25.948321s
+size=3840x2160 mode=2 threads=1 run=5/5 runtime=25.938721s
+avg(size=3840x2160, mode=2, threads=1)=25.945945600s, speedup_vs_mode0_t1=0.966949, speedup_mode2_vs_mode1=0.980133
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=3840x2160 mode=2 threads=2 run=1/5 runtime=14.038914s
+srun: Step created for StepId=65479040.236
+size=3840x2160 mode=2 threads=2 run=2/5 runtime=13.810301s
+size=3840x2160 mode=2 threads=2 run=3/5 runtime=13.772899s
+size=3840x2160 mode=2 threads=2 run=4/5 runtime=13.750228s
+size=3840x2160 mode=2 threads=2 run=5/5 runtime=13.784589s
+avg(size=3840x2160, mode=2, threads=2)=13.831386200s, speedup_vs_mode0_t1=1.813876, speedup_mode2_vs_mode1=0.996812
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=3840x2160 mode=2 threads=4 run=1/5 runtime=8.089423s
+size=3840x2160 mode=2 threads=4 run=2/5 runtime=8.114877s
+size=3840x2160 mode=2 threads=4 run=3/5 runtime=8.159558s
+size=3840x2160 mode=2 threads=4 run=4/5 runtime=8.146670s
+size=3840x2160 mode=2 threads=4 run=5/5 runtime=8.140754s
+avg(size=3840x2160, mode=2, threads=4)=8.130256400s, speedup_vs_mode0_t1=3.085808, speedup_mode2_vs_mode1=1.046930
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=3840x2160 mode=2 threads=8 run=1/5 runtime=5.628513s
+size=3840x2160 mode=2 threads=8 run=2/5 runtime=5.618607s
+size=3840x2160 mode=2 threads=8 run=3/5 runtime=5.631342s
+size=3840x2160 mode=2 threads=8 run=4/5 runtime=5.590416s
+size=3840x2160 mode=2 threads=8 run=5/5 runtime=5.572274s
+avg(size=3840x2160, mode=2, threads=8)=5.608230400s, speedup_vs_mode0_t1=4.473499, speedup_mode2_vs_mode1=1.045529
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=3840x2160 mode=2 threads=16 run=1/5 runtime=3.424330s
+size=3840x2160 mode=2 threads=16 run=2/5 runtime=3.459961s
+size=3840x2160 mode=2 threads=16 run=3/5 runtime=3.469718s
+size=3840x2160 mode=2 threads=16 run=4/5 runtime=3.391255s
+size=3840x2160 mode=2 threads=16 run=5/5 runtime=3.452034s
+avg(size=3840x2160, mode=2, threads=16)=3.439459600s, speedup_vs_mode0_t1=7.294289, speedup_mode2_vs_mode1=1.081361
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=3840x2160 mode=2 threads=32 run=1/5 runtime=2.815914s
+size=3840x2160 mode=2 threads=32 run=2/5 runtime=2.881499s
+size=3840x2160 mode=2 threads=32 run=3/5 runtime=2.831600s
+size=3840x2160 mode=2 threads=32 run=4/5 runtime=2.880108s
+size=3840x2160 mode=2 threads=32 run=5/5 runtime=2.916678s
+avg(size=3840x2160, mode=2, threads=32)=2.865159800s, speedup_vs_mode0_t1=8.756375, speedup_mode2_vs_mode1=1.029744
+
+=== 7680x4320 ===
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=7680x4320 mode=0 threads=1 run=1/5 runtime=103.342548s
+size=7680x4320 mode=0 threads=1 run=2/5 runtime=103.313348s
+size=7680x4320 mode=0 threads=1 run=3/5 runtime=101.542645s
+size=7680x4320 mode=0 threads=1 run=4/5 runtime=100.984857s
+size=7680x4320 mode=0 threads=1 run=5/5 runtime=100.942526s
+avg(size=7680x4320, mode=0, threads=1)=102.025184800s, speedup_vs_mode0_t1=1.000000, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=7680x4320 mode=1 threads=1 run=1/5 runtime=102.937959s
+size=7680x4320 mode=1 threads=1 run=2/5 runtime=102.948412s
+size=7680x4320 mode=1 threads=1 run=3/5 runtime=102.941524s
+size=7680x4320 mode=1 threads=1 run=4/5 runtime=102.910624s
+size=7680x4320 mode=1 threads=1 run=5/5 runtime=102.884931s
+avg(size=7680x4320, mode=1, threads=1)=102.924690000s, speedup_vs_mode0_t1=0.991261, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=7680x4320 mode=1 threads=2 run=1/5 runtime=55.657279s
+size=7680x4320 mode=1 threads=2 run=2/5 runtime=55.694265s
+size=7680x4320 mode=1 threads=2 run=3/5 runtime=55.771038s
+size=7680x4320 mode=1 threads=2 run=4/5 runtime=55.715662s
+size=7680x4320 mode=1 threads=2 run=5/5 runtime=55.679496s
+avg(size=7680x4320, mode=1, threads=2)=55.703548000s, speedup_vs_mode0_t1=1.831574, speedup_mode2_vs_mode1=
+WARNING: binary reports removing seams: seams, requested 128.
+WARNING: update main.cpp to accept and use argv[3] for exact assignment-compliant runs.
+size=7680x4320 mode=1 threads=4 run=1/5 runtime=33.513628s
+size=7680x4320 mode=1 threads=4 run=2/5 runtime=33.462213s
+[2026-03-24T17:15:45.650] error: *** JOB 65479040 ON wn101 CANCELLED AT 2026-03-24T17:15:45 DUE TO TIME LIMIT ***

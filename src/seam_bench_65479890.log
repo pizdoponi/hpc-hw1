@@ -1,0 +1,139 @@
+Compiling with -O3 and OpenMP
+main.cpp:2:9: warning: "_GNU_SOURCE" redefined
+    2 | #define _GNU_SOURCE
+      |         ^~~~~~~~~~~
+<command-line>: note: this is the location of the previous definition
+Resuming with existing benchmark_results.csv
+SLURM_CPUS_PER_TASK=32
+OMP_PLACES=cores
+OMP_PROC_BIND=close
+Repeats=5, seams per run=128
+
+=== 720x480 ===
+Skipping already completed config: size=720x480 mode=0 threads=1
+Skipping already completed config: size=720x480 mode=1 threads=1
+Skipping already completed config: size=720x480 mode=1 threads=2
+Skipping already completed config: size=720x480 mode=1 threads=4
+Skipping already completed config: size=720x480 mode=1 threads=8
+Skipping already completed config: size=720x480 mode=1 threads=16
+Skipping already completed config: size=720x480 mode=1 threads=32
+Skipping already completed config: size=720x480 mode=2 threads=1
+Skipping already completed config: size=720x480 mode=2 threads=2
+Skipping already completed config: size=720x480 mode=2 threads=4
+Skipping already completed config: size=720x480 mode=2 threads=8
+Skipping already completed config: size=720x480 mode=2 threads=16
+Skipping already completed config: size=720x480 mode=2 threads=32
+
+=== 1024x768 ===
+Skipping already completed config: size=1024x768 mode=0 threads=1
+Skipping already completed config: size=1024x768 mode=1 threads=1
+Skipping already completed config: size=1024x768 mode=1 threads=2
+Skipping already completed config: size=1024x768 mode=1 threads=4
+Skipping already completed config: size=1024x768 mode=1 threads=8
+Skipping already completed config: size=1024x768 mode=1 threads=16
+Skipping already completed config: size=1024x768 mode=1 threads=32
+Skipping already completed config: size=1024x768 mode=2 threads=1
+Skipping already completed config: size=1024x768 mode=2 threads=2
+Skipping already completed config: size=1024x768 mode=2 threads=4
+Skipping already completed config: size=1024x768 mode=2 threads=8
+Skipping already completed config: size=1024x768 mode=2 threads=16
+Skipping already completed config: size=1024x768 mode=2 threads=32
+
+=== 1920x1200 ===
+Skipping already completed config: size=1920x1200 mode=0 threads=1
+Skipping already completed config: size=1920x1200 mode=1 threads=1
+Skipping already completed config: size=1920x1200 mode=1 threads=2
+Skipping already completed config: size=1920x1200 mode=1 threads=4
+Skipping already completed config: size=1920x1200 mode=1 threads=8
+Skipping already completed config: size=1920x1200 mode=1 threads=16
+Skipping already completed config: size=1920x1200 mode=1 threads=32
+Skipping already completed config: size=1920x1200 mode=2 threads=1
+Skipping already completed config: size=1920x1200 mode=2 threads=2
+Skipping already completed config: size=1920x1200 mode=2 threads=4
+Skipping already completed config: size=1920x1200 mode=2 threads=8
+Skipping already completed config: size=1920x1200 mode=2 threads=16
+Skipping already completed config: size=1920x1200 mode=2 threads=32
+
+=== 3840x2160 ===
+Skipping already completed config: size=3840x2160 mode=0 threads=1
+Skipping already completed config: size=3840x2160 mode=1 threads=1
+Skipping already completed config: size=3840x2160 mode=1 threads=2
+Skipping already completed config: size=3840x2160 mode=1 threads=4
+Skipping already completed config: size=3840x2160 mode=1 threads=8
+Skipping already completed config: size=3840x2160 mode=1 threads=16
+Skipping already completed config: size=3840x2160 mode=1 threads=32
+Skipping already completed config: size=3840x2160 mode=2 threads=1
+Skipping already completed config: size=3840x2160 mode=2 threads=2
+Skipping already completed config: size=3840x2160 mode=2 threads=4
+Skipping already completed config: size=3840x2160 mode=2 threads=8
+Skipping already completed config: size=3840x2160 mode=2 threads=16
+Skipping already completed config: size=3840x2160 mode=2 threads=32
+
+=== 7680x4320 ===
+Skipping already completed config: size=7680x4320 mode=0 threads=1
+Skipping already completed config: size=7680x4320 mode=1 threads=1
+Skipping already completed config: size=7680x4320 mode=1 threads=2
+size=7680x4320 mode=1 threads=4 run=1/5 runtime=33.505691s
+size=7680x4320 mode=1 threads=4 run=2/5 runtime=33.482290s
+size=7680x4320 mode=1 threads=4 run=3/5 runtime=33.488330s
+size=7680x4320 mode=1 threads=4 run=4/5 runtime=33.480086s
+srun: Step created for StepId=65479890.4
+size=7680x4320 mode=1 threads=4 run=5/5 runtime=33.453565s
+avg(size=7680x4320, mode=1, threads=4)=33.481992400s, speedup_vs_mode0_t1=3.047166, speedup_mode2_vs_mode1=
+size=7680x4320 mode=1 threads=8 run=1/5 runtime=23.063605s
+size=7680x4320 mode=1 threads=8 run=2/5 runtime=23.092589s
+size=7680x4320 mode=1 threads=8 run=3/5 runtime=23.093733s
+size=7680x4320 mode=1 threads=8 run=4/5 runtime=23.069699s
+srun: Step created for StepId=65479890.9
+size=7680x4320 mode=1 threads=8 run=5/5 runtime=23.013612s
+avg(size=7680x4320, mode=1, threads=8)=23.066647600s, speedup_vs_mode0_t1=4.423061, speedup_mode2_vs_mode1=
+size=7680x4320 mode=1 threads=16 run=1/5 runtime=16.990858s
+size=7680x4320 mode=1 threads=16 run=2/5 runtime=16.985358s
+size=7680x4320 mode=1 threads=16 run=3/5 runtime=16.985714s
+size=7680x4320 mode=1 threads=16 run=4/5 runtime=16.984149s
+size=7680x4320 mode=1 threads=16 run=5/5 runtime=16.992382s
+avg(size=7680x4320, mode=1, threads=16)=16.987692200s, speedup_vs_mode0_t1=6.005830, speedup_mode2_vs_mode1=
+size=7680x4320 mode=1 threads=32 run=1/5 runtime=12.136399s
+size=7680x4320 mode=1 threads=32 run=2/5 runtime=12.126593s
+size=7680x4320 mode=1 threads=32 run=3/5 runtime=12.127802s
+size=7680x4320 mode=1 threads=32 run=4/5 runtime=12.134276s
+size=7680x4320 mode=1 threads=32 run=5/5 runtime=12.133888s
+avg(size=7680x4320, mode=1, threads=32)=12.131791600s, speedup_vs_mode0_t1=8.409738, speedup_mode2_vs_mode1=
+size=7680x4320 mode=2 threads=1 run=1/5 runtime=103.845807s
+size=7680x4320 mode=2 threads=1 run=2/5 runtime=103.826673s
+size=7680x4320 mode=2 threads=1 run=3/5 runtime=103.779773s
+size=7680x4320 mode=2 threads=1 run=4/5 runtime=103.826946s
+size=7680x4320 mode=2 threads=1 run=5/5 runtime=103.843675s
+avg(size=7680x4320, mode=2, threads=1)=103.824574800s, speedup_vs_mode0_t1=0.982669, speedup_mode2_vs_mode1=0.991333
+size=7680x4320 mode=2 threads=2 run=1/5 runtime=54.887506s
+size=7680x4320 mode=2 threads=2 run=2/5 runtime=54.720819s
+size=7680x4320 mode=2 threads=2 run=3/5 runtime=54.927684s
+size=7680x4320 mode=2 threads=2 run=4/5 runtime=54.699427s
+size=7680x4320 mode=2 threads=2 run=5/5 runtime=54.791005s
+avg(size=7680x4320, mode=2, threads=2)=54.805288200s, speedup_vs_mode0_t1=1.861594, speedup_mode2_vs_mode1=1.016390
+size=7680x4320 mode=2 threads=4 run=1/5 runtime=31.703206s
+size=7680x4320 mode=2 threads=4 run=2/5 runtime=31.743985s
+size=7680x4320 mode=2 threads=4 run=3/5 runtime=31.766533s
+size=7680x4320 mode=2 threads=4 run=4/5 runtime=31.738977s
+size=7680x4320 mode=2 threads=4 run=5/5 runtime=31.725522s
+avg(size=7680x4320, mode=2, threads=4)=31.735644600s, speedup_vs_mode0_t1=3.214845, speedup_mode2_vs_mode1=1.055028
+size=7680x4320 mode=2 threads=8 run=1/5 runtime=21.635263s
+size=7680x4320 mode=2 threads=8 run=2/5 runtime=21.646122s
+size=7680x4320 mode=2 threads=8 run=3/5 runtime=21.658794s
+size=7680x4320 mode=2 threads=8 run=4/5 runtime=21.658921s
+size=7680x4320 mode=2 threads=8 run=5/5 runtime=21.629181s
+avg(size=7680x4320, mode=2, threads=8)=21.645656200s, speedup_vs_mode0_t1=4.713425, speedup_mode2_vs_mode1=1.065648
+size=7680x4320 mode=2 threads=16 run=1/5 runtime=15.410714s
+size=7680x4320 mode=2 threads=16 run=2/5 runtime=15.382085s
+size=7680x4320 mode=2 threads=16 run=3/5 runtime=15.394595s
+size=7680x4320 mode=2 threads=16 run=4/5 runtime=15.379238s
+size=7680x4320 mode=2 threads=16 run=5/5 runtime=15.401400s
+avg(size=7680x4320, mode=2, threads=16)=15.393606400s, speedup_vs_mode0_t1=6.627764, speedup_mode2_vs_mode1=1.103555
+size=7680x4320 mode=2 threads=32 run=1/5 runtime=10.823749s
+size=7680x4320 mode=2 threads=32 run=2/5 runtime=10.832957s
+size=7680x4320 mode=2 threads=32 run=3/5 runtime=10.866551s
+size=7680x4320 mode=2 threads=32 run=4/5 runtime=10.833544s
+size=7680x4320 mode=2 threads=32 run=5/5 runtime=10.828369s
+avg(size=7680x4320, mode=2, threads=32)=10.837034000s, speedup_vs_mode0_t1=9.414493, speedup_mode2_vs_mode1=1.119475
+
+Done. Results saved to benchmark_results.csv.
