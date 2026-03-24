@@ -3,7 +3,6 @@
 #include <vector>
 #include <cstddef>
 #include <cstdlib>
-#include <cstdio>
 #include <omp.h>
 
 std::vector<float> compute_cumulative_energy_bottom_up(
@@ -109,10 +108,6 @@ void remove_seam(float*& image, int& width, int& height, int cpp,
     }
 
     if (direction == SeamDirection::Vertical) {
-        if (static_cast<int>(seam.size()) != height) {
-            std::printf("[debug] remove_seam: seam size %zu does not match height %d\n", seam.size(), height);
-            return;
-        }
         const int new_width = width - 1;
         const std::size_t new_count = static_cast<std::size_t>(new_width) * height * cpp;
         float *new_image = static_cast<float *>(std::malloc(new_count * sizeof(float)));
@@ -123,10 +118,6 @@ void remove_seam(float*& image, int& width, int& height, int cpp,
         #pragma omp parallel for schedule(static)
         for (int y = 0; y < height; y++) {
             const int seam_x = seam[static_cast<std::size_t>(y)];
-            if (seam_x < 0 || seam_x >= width) {
-                std::printf("[debug] remove_seam: seam_x out of bounds y=%d seam_x=%d width=%d\n", y, seam_x, width);
-                continue;
-            }
             for (int x = 0; x < new_width; x++) {
                 const int src_x = (x < seam_x) ? x : x + 1;
                 const std::size_t dst_base = (static_cast<std::size_t>(y) * new_width + x) * cpp;
@@ -144,10 +135,6 @@ void remove_seam(float*& image, int& width, int& height, int cpp,
     }
 
     // else direction == SeamDirection::Horizontal
-    if (static_cast<int>(seam.size()) != width) {
-        std::printf("[debug] remove_seam: seam size %zu does not match width %d\n", seam.size(), width);
-        return;
-    }
     const int new_height = height - 1;
     const std::size_t new_count = static_cast<std::size_t>(width) * new_height * cpp;
     float *new_image = static_cast<float *>(std::malloc(new_count * sizeof(float)));
@@ -158,10 +145,6 @@ void remove_seam(float*& image, int& width, int& height, int cpp,
     #pragma omp parallel for schedule(static)
     for (int x = 0; x < width; x++) {
         const int seam_y = seam[static_cast<std::size_t>(x)];
-        if (seam_y < 0 || seam_y >= height) {
-            std::printf("[debug] remove_seam: seam_y out of bounds x=%d seam_y=%d height=%d\n", x, seam_y, height);
-            continue;
-        }
         for (int y = 0; y < new_height; y++) {
             const int src_y = (y < seam_y) ? y : y + 1;
             const std::size_t dst_base = (static_cast<std::size_t>(y) * width + x) * cpp;

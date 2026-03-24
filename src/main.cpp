@@ -23,7 +23,6 @@
 
 int main(int argc, char *argv[])
 {
-    std::setvbuf(stdout, nullptr, _IONBF, 0);
     if (argc < 3)
     {
         std::printf("USAGE: main input_image output_image [<n_seams_to_remove> = 128] [<parallel_level> = 0]\n");
@@ -63,18 +62,12 @@ int main(int argc, char *argv[])
         std::printf("Error reading loading image %s!\n", image_in_name);
         std::exit(EXIT_FAILURE);
     }
-    std::printf("[debug] Loaded image: width=%d height=%d cpp=%d\n", width, height, cpp);
     std::printf("Loaded image %s of size %dx%d with %d channels.\n", image_in_name, width, height, cpp);
 
     double start = omp_get_wtime();
 
     // ── do the work ─────────────────────────────────────────────────────
     for (int i = 0; i < n_seams_to_remove; i++) {
-        std::printf("[debug] Iteration %d: width=%d height=%d cpp=%d\n", i, width, height, cpp);
-        if (width <= 1 || height <= 1) {
-            std::printf("[debug] width/height too small for seam removal.\n");
-        }
-
         std::vector<float> image_energy;
         if (parallel > 0) {
             image_energy = compute_energy_parallel(image_in, height, width, cpp);
@@ -92,27 +85,7 @@ int main(int argc, char *argv[])
         }
 
         std::vector<int> seam_to_remove = find_vertical_seam_top_down(cumulative_energy, width, height);
-        std::printf("[debug] seam_to_remove size=%zu (expected %d)\n", seam_to_remove.size(), height);
-        if (!seam_to_remove.empty()) {
-            int min_seam = seam_to_remove[0];
-            int max_seam = seam_to_remove[0];
-            for (int y = 0; y < height; ++y) {
-                if (y >= static_cast<int>(seam_to_remove.size())) {
-                    std::printf("[debug] seam index out of range at y=%d\n", y);
-                    break;
-                }
-                int v = seam_to_remove[static_cast<std::size_t>(y)];
-                if (v < min_seam) min_seam = v;
-                if (v > max_seam) max_seam = v;
-                if (v < 0 || v >= width) {
-                    std::printf("[debug] seam out of bounds at y=%d: %d (width=%d)\n", y, v, width);
-                    break;
-                }
-            }
-            std::printf("[debug] seam range: min=%d max=%d\n", min_seam, max_seam);
-        }
         remove_seam(image_in, width, height, cpp, seam_to_remove, SeamDirection::Vertical);
-        std::printf("[debug] After remove_seam: width=%d height=%d\n", width, height);
     }
 
     // Because we modify the image in place, the output is the last step.
