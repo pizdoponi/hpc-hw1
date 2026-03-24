@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     std::setvbuf(stdout, nullptr, _IONBF, 0);
     if (argc < 3)
     {
-        std::printf("USAGE: main input_image output_image\n");
+        std::printf("USAGE: main input_image output_image [<parallel_level> = 0]\n");
         std::exit(EXIT_FAILURE);
     }
 
@@ -36,6 +36,17 @@ int main(int argc, char *argv[])
 
     std::snprintf(image_in_name, MAX_FILENAME, "%s", argv[1]);
     std::snprintf(image_out_name, MAX_FILENAME, "%s", argv[2]);
+
+    // Determine the level of parallelism.
+    // 0 = no parallelism
+    // 1 = parallel energy computation
+    // 2 = parallel energy computation + per row parallel cumulative energy computation
+    // 3 = parallel energy computation + pyramid method parallel cumulative energy computation
+    int parallel = 0;
+    if (argc >= 4) {
+        parallel = std::atoi(argv[3]);
+    }
+
 
     // Load image from file and allocate space for the output image
     int width, height, cpp; // cpp = channels per pixel
@@ -59,8 +70,23 @@ int main(int argc, char *argv[])
         if (width <= 1 || height <= 1) {
             std::printf("[debug] width/height too small for seam removal.\n");
         }
-        std::vector<float> image_energy = compute_energy(image_in, height, width, cpp);
-        std::vector<float> cumulative_energy = compute_cumulative_energy_bottom_up(image_energy, width, height);
+
+        std::vector<float> image_energy;
+        if (parallel > 0) {
+            image_energy = compute_energy_parallel(image_in, height, width, cpp);
+        } else {
+            image_energy = compute_energy(image_in, height, width, cpp);
+        }
+
+        std::vector<float> cumulative_energy;
+        if (parallel == 3) {
+            exit(1); // Not yet implemented.
+        } else if (parallel == 2) {
+            cumulative_energy = compute_cumulative_energy_bottom_up_parallel(image_energy, width, height);
+        } else {
+            cumulative_energy = compute_cumulative_energy_bottom_up(image_energy, width, height);
+        }
+
         std::vector<int> seam_to_remove = find_vertical_seam_top_down(cumulative_energy, width, height);
         std::printf("[debug] seam_to_remove size=%zu (expected %d)\n", seam_to_remove.size(), height);
         if (!seam_to_remove.empty()) {
