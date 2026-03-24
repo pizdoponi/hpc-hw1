@@ -20,31 +20,6 @@
 #define COLOR_CHANNELS 0
 #define MAX_FILENAME 255
 
-void copy_image(float *image_out, const float *image_in, const std::size_t size)
-{
-    
-    #pragma omp parallel
-    {
-        // Print thread, CPU, and NUMA node information
-        #pragma omp single
-        std::printf("Using %d threads.\n", omp_get_num_threads());
-
-        int tid = omp_get_thread_num();
-        int cpu = sched_getcpu();
-        int node = numa_node_of_cpu(cpu);
-
-        #pragma omp critical
-        std::printf("Thread %d -> CPU %d NUMA %d\n", tid, cpu, node);
-
-        // Copy the image data in parallel
-        #pragma omp for
-        for (size_t i = 0; i < size; ++i)
-        {
-            image_out[i] = image_in[i];
-        }
-    }
-    
-}
 
 int main(int argc, char *argv[])
 {
