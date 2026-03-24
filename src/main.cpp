@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     std::setvbuf(stdout, nullptr, _IONBF, 0);
     if (argc < 3)
     {
-        std::printf("USAGE: main input_image output_image [<parallel_level> = 0]\n");
+        std::printf("USAGE: main input_image output_image [<n_seams_to_remove> = 128] [<parallel_level> = 0]\n");
         std::exit(EXIT_FAILURE);
     }
 
@@ -37,14 +37,20 @@ int main(int argc, char *argv[])
     std::snprintf(image_in_name, MAX_FILENAME, "%s", argv[1]);
     std::snprintf(image_out_name, MAX_FILENAME, "%s", argv[2]);
 
+    // Set the number of seams to remove.
+    int n_seams_to_remove = 128;
+    if (argc >= 4) {
+        n_seams_to_remove = std::atoi(argv[3]);
+    }
+
     // Determine the level of parallelism.
     // 0 = no parallelism
     // 1 = parallel energy computation
     // 2 = parallel energy computation + per row parallel cumulative energy computation
     // 3 = parallel energy computation + pyramid method parallel cumulative energy computation
     int parallel = 0;
-    if (argc >= 4) {
-        parallel = std::atoi(argv[3]);
+    if (argc >= 5) {
+        parallel = std::atoi(argv[4]);
     }
 
 
@@ -63,8 +69,6 @@ int main(int argc, char *argv[])
     double start = omp_get_wtime();
 
     // ── do the work ─────────────────────────────────────────────────────
-    const int n_seams_to_remove = 1; // 128
-
     for (int i = 0; i < n_seams_to_remove; i++) {
         std::printf("[debug] Iteration %d: width=%d height=%d cpp=%d\n", i, width, height, cpp);
         if (width <= 1 || height <= 1) {
